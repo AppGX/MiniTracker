@@ -1,0 +1,18 @@
+@if (task){
+<div class="container mt-4">
+  <h2>Task Details</h2>
+  <div class="details-container">
+    <p><strong>ID:</strong> {{ task.id }}</p>
+    <p><strong>Title:</strong> {{ task.title }}</p>
+    <p><strong>Description:</strong> {{ task.description }}</p>
+    <p><strong>Status:</strong> {{ task.status }}</p>
+    <p><strong>Assignees:</strong> {{ task.assignees }}</p>
+    <p><strong>Deadline:</strong> {{ task.deadline | date }}</p>
+    <!-- Add more details as needed -->
+  </div>
+  <button mat-button color="primary" routerLink="/tasks/list">Back to Tasks</button>
+</div>
+}
+@else {
+  <h2>Loading data</h2>
+}

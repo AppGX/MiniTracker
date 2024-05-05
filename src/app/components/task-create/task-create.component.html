@@ -1,0 +1,36 @@
+<mat-card>
+  <h2>Add Task</h2>
+  <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <input matInput type="text" id="title" formControlName="title" placeholder="Title" aria-label="Title" required>
+      <mat-error *ngIf="taskForm.get('title')?.hasError('required')">Title is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput id="description" formControlName="description" placeholder="Description" aria-label="Description"></textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" id="deadline" formControlName="deadline" placeholder="Deadline" aria-label="Deadline" required>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="taskForm.get('deadline')?.hasError('required')">Deadline is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Priority</mat-label>
+      <mat-select formControlName="priority" required>
+        <mat-option *ngFor="let priority of priorities" [value]="priority">{{ priority }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Assignees</mat-label>
+      <mat-select formControlName="assignees" multiple>
+        <mat-option *ngFor="let assignee of assignees" [value]="assignee">{{ assignee }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="taskForm.invalid">Add Task</button>
+  </form>
+  <a mat-button routerLink="/tasks">Back to Task List</a>
+</mat-card>

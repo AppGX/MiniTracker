@@ -1,0 +1,28 @@
+/* add-task.component.css */
+
+mat-card {
+  width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+//form {
+//  max-width: 400px;
+//  margin: 0 auto;
+//}
+
+/* Style for form fields */
+mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Style for the submit button */
+button {
+  width: 100%;
+  margin-top: 20px;
+}
+h2 {
+  margin-bottom: 20px;
+  text-align: center; /* Center the title */
+}

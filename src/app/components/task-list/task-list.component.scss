@@ -1,0 +1,67 @@
+/* TaskListComponent styles */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.task-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.task-card {
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.task-card.high-priority {
+  background-color: rgba(255, 0, 0, 0.1); /* Красный цвет с прозрачностью */
+}
+
+.task-card.medium-priority {
+  background-color: rgba(255, 255, 0, 0.1); /* Желтый цвет с прозрачностью */
+}
+
+.task-card.low-priority {
+  /* Для низкого приоритета убираем фон */
+}
+
+.task-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  display: flex;
+  align-items: center; /* Выравнивание иконки и текста по вертикали */
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.description {
+  margin-bottom: 20px;
+}
+
+.meta-data {
+  margin-bottom: 10px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.priority-icon {
+  color: red;
+  font-size: 24px;
+}
+
+.medium-priority .priority-icon {
+  color: yellow;
+}
+
+/* Низкий приоритет не требует дополнительного стиля */
